@@ -36,6 +36,29 @@ export default function Home() {
       <GoldenSpline />
       
       <main style={{ position: 'relative', zIndex: 2 }}>
+        <div className="ticker-container">
+          <div className="ticker-wrap">
+            <div className="ticker-item">SQL ROWS AUDITED: <span>284K+</span></div>
+            <div className="ticker-item">AVERAGE MODEL R² SCORE: <span>94.2%</span></div>
+            <div className="ticker-item">RL RISK AGENT SHARPE RATIO: <span>2.84</span></div>
+            <div className="ticker-item">DBSCAN CLUSTER HUBS DETECTED: <span>345</span></div>
+            <div className="ticker-item">MISTRAL 7B QLORA FINE-TUNES: <span>4-BIT</span></div>
+            <div className="ticker-item">PYTORCH CLASSIFICATION PRECISION: <span>96.0%</span></div>
+            <div className="ticker-item">SMART CONTRACT AUDITED BYTECODE: <span>1,240</span></div>
+            <div className="ticker-item">ARIMA+LSTM FORECAST CONVERGENCE: <span>88.4%</span></div>
+            
+            {/* Duplicated for infinite loops */}
+            <div className="ticker-item">SQL ROWS AUDITED: <span>284K+</span></div>
+            <div className="ticker-item">AVERAGE MODEL R² SCORE: <span>94.2%</span></div>
+            <div className="ticker-item">RL RISK AGENT SHARPE RATIO: <span>2.84</span></div>
+            <div className="ticker-item">DBSCAN CLUSTER HUBS DETECTED: <span>345</span></div>
+            <div className="ticker-item">MISTRAL 7B QLORA FINE-TUNES: <span>4-BIT</span></div>
+            <div className="ticker-item">PYTORCH CLASSIFICATION PRECISION: <span>96.0%</span></div>
+            <div className="ticker-item">SMART CONTRACT AUDITED BYTECODE: <span>1,240</span></div>
+            <div className="ticker-item">ARIMA+LSTM FORECAST CONVERGENCE: <span>88.4%</span></div>
+          </div>
+        </div>
+
         {/* HERO SECTION */}
         <section className="hero container">
           <div className="hero-grid">
@@ -74,7 +97,7 @@ export default function Home() {
 
               <div className="hero-stats">
                 <div className="hero-stat-item">
-                  <span className="hero-stat-value">11</span>
+                  <span className="hero-stat-value">14</span>
                   <span className="hero-stat-label">End-to-End Projects</span>
                 </div>
                 <div className="hero-stat-item">
@@ -160,7 +183,6 @@ export default function Home() {
             <motion.div variants={itemVariants}>
               <Tilt3D>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <span style={{ fontSize: '28px' }}>📊</span>
                   <h3 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--accent-gold-dark)' }}>Analytical Rigor</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                     Utilizing advanced statistical tools, correlation diagnostics, and segment classification models to discover trends, detect outliers, and analyze user behavior pattern changes.
@@ -172,7 +194,6 @@ export default function Home() {
             <motion.div variants={itemVariants}>
               <Tilt3D>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <span style={{ fontSize: '28px' }}>💼</span>
                   <h3 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--accent-gold-dark)' }}>Business Value Focus</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                     Engineering models and dashboards with direct financial impact—estimating fraud savings, identifying client retention opportunities, and isolating marketing campaign ROIs.
@@ -184,7 +205,6 @@ export default function Home() {
             <motion.div variants={itemVariants}>
               <Tilt3D>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <span style={{ fontSize: '28px' }}>🖥️</span>
                   <h3 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--accent-gold-dark)' }}>Interactive Dashboards</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                     Building polished, intuitive reporting layouts with Streamlit, Plotly, and Dash. Designing KPI matrices and cohort heatmaps that communicate complex insights clearly to executives.
@@ -196,7 +216,6 @@ export default function Home() {
             <motion.div variants={itemVariants}>
               <Tilt3D>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <span style={{ fontSize: '28px' }}>🚀</span>
                   <h3 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--accent-gold-dark)' }}>ETL & Full Stack Integration</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                     Structuring backend databases, writing robust web scrapers, implementing clean API pipelines, and styling responsive React frontends for end-to-end production deployment.

@@ -3,8 +3,8 @@
   --bg-secondary: #f4f3f0;
   --bg-card: #ffffff;
   --text-primary: #1c1917;
-  --text-secondary: #685f52;
-  --text-tertiary: #a8a29e;
+  --text-secondary: #3c3935;
+  --text-tertiary: #87817a;
   --accent-gold: #b89047;
   --accent-gold-light: rgba(184, 144, 71, 0.15);
   --accent-gold-dark: #8c6a2c;
@@ -35,6 +35,11 @@
 body {
   margin: 0;
   background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(rgba(184, 144, 71, 0.08) 1.5px, transparent 1.5px),
+    linear-gradient(rgba(184, 144, 71, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 144, 71, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
   color: var(--text-primary);
   font-family: var(--font-body);
   overflow-x: hidden;

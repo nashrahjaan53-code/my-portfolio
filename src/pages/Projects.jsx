@@ -27,7 +27,7 @@ export default function Projects() {
     <main className="container" style={{ padding: '60px 24px' }}>
       <div className="section-header">
         <h2>Analytics Showroom</h2>
-        <p>Browse 11 end-to-end projects. Select a project to review methodology, algorithms, and business outcomes.</p>
+        <p>Browse 14 end-to-end projects. Select a project to review methodology, algorithms, and business outcomes.</p>
       </div>
 
       {/* Category Filters */}
