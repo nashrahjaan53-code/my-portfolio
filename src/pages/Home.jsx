@@ -206,9 +206,9 @@ export default function Home() {
           <motion.div
             className="card-3d leetcode-grid"
             style={{
-              background: 'rgba(255, 255, 255, 0.75)',
+              background: 'var(--bg-card)',
               backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(184, 144, 71, 0.18)',
+              border: '1px solid var(--border-gold)',
               padding: '40px',
               borderRadius: '16px'
             }}

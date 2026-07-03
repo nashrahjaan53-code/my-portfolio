@@ -59,7 +59,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(252, 251, 250, 0.8);
+  background-color: var(--bg-navbar);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);

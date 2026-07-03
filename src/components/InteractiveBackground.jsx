@@ -13,7 +13,7 @@ export default function InteractiveBackground({ theme = 'light' }) {
     let height = (canvas.height = window.innerHeight);
 
     // Mouse coordinates tracker
-    const mouse = { x: null, y: null, radius: 150 };
+    const mouse = { x: null, y: null, radius: 220 };
 
     const handleMouseMove = (e) => {
       mouse.x = e.clientX;
@@ -39,15 +39,15 @@ export default function InteractiveBackground({ theme = 'light' }) {
     // LIGHT MODE: GOLDEN PARTICLES CONSTELATION
     // ==========================================
     let particlesArray = [];
-    const numParticles = Math.min(65, Math.floor((width * height) / 22000));
+    const numParticles = Math.min(130, Math.floor((width * height) / 10000));
 
     class Particle {
       constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = Math.random() * 0.3 - 0.15;
-        this.speedY = Math.random() * 0.3 - 0.15;
+        this.size = Math.random() * 3.5 + 2.5;
+        this.speedX = Math.random() * 0.7 - 0.35;
+        this.speedY = Math.random() * 0.7 - 0.35;
       }
       update() {
         this.x += this.speedX;
@@ -60,7 +60,7 @@ export default function InteractiveBackground({ theme = 'light' }) {
         if (this.y > height) this.y = 0;
       }
       draw() {
-        ctx.fillStyle = theme === 'dark' ? 'rgba(223, 197, 136, 0.4)' : 'rgba(184, 144, 71, 0.35)';
+        ctx.fillStyle = theme === 'dark' ? 'rgba(223, 197, 136, 0.55)' : 'rgba(184, 144, 71, 0.45)';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -88,9 +88,9 @@ export default function InteractiveBackground({ theme = 'light' }) {
           const dy = particlesArray[i].y - particlesArray[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 110) {
-            ctx.strokeStyle = `rgba(184, 144, 71, ${0.12 * (1 - dist / 110)})`;
-            ctx.lineWidth = 0.6;
+          if (dist < 150) {
+            ctx.strokeStyle = `rgba(184, 144, 71, ${0.25 * (1 - dist / 150)})`;
+            ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
             ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
@@ -105,8 +105,8 @@ export default function InteractiveBackground({ theme = 'light' }) {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < mouse.radius) {
-            ctx.strokeStyle = `rgba(184, 144, 71, ${0.18 * (1 - dist / mouse.radius)})`;
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = `rgba(184, 144, 71, ${0.35 * (1 - dist / mouse.radius)})`;
+            ctx.lineWidth = 1.0;
             ctx.beginPath();
             ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
             ctx.lineTo(mouse.x, mouse.y);

@@ -17,6 +17,8 @@
   --grid-color-1: rgba(184, 144, 71, 0.08);
   --grid-color-2: rgba(184, 144, 71, 0.02);
   
+  --bg-navbar: rgba(252, 251, 250, 0.85);
+  
   --font-heading: 'Fraunces', Georgia, serif;
   --font-body: 'Space Grotesk', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -50,6 +52,8 @@
   
   --grid-color-1: rgba(223, 197, 136, 0.06);
   --grid-color-2: rgba(223, 197, 136, 0.015);
+  
+  --bg-navbar: rgba(10, 9, 8, 0.85);
 }
 
 *, *::before, *::after {
