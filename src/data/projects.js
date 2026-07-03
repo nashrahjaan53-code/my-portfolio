@@ -45,7 +45,7 @@ export const projectsData = [
     category: 'Machine Learning',
     emoji: '🔐',
     description: 'Built a deep PyTorch neural network to detect fraudulent credit card transactions. Controlled data leakage by strictly partitioning validation/test sets prior to executing synthetic oversampling (SMOTE) algorithms.',
-    tech: 'PyTorch, Neural Networks, SMOTE, scikit-learn, Pandas, Model Easing',
+    tech: 'PyTorch, Neural Networks, SMOTE, scikit-learn, Pandas, Model Evaluation',
     impact: 'Suppressed classification leakage, delivering stable fraud detections on highly imbalanced datasets',
     github: 'https://github.com/nashrahjaan53-code/credit-card-fraud-detection-nn'
   },
@@ -61,6 +61,16 @@ export const projectsData = [
   },
   {
     id: 7,
+    title: 'RAG AI Agent',
+    category: 'Generative AI & LLMs',
+    emoji: '🤖',
+    description: 'Developed a high-fidelity Retrieval-Augmented Generation (RAG) agent integrating custom text vector databases, semantic search pipelines, and LLM text generation to query nested technical documents.',
+    tech: 'LangChain, LlamaIndex, Vector DB, Python, LLMs, Sentence-Transformers',
+    impact: 'Secured contextual answer retrievals from multi-format docs with minimal semantic drift',
+    github: 'https://github.com/nashrahjaan53-code/rag-ai-agent'
+  },
+  {
+    id: 8,
     title: 'Smart Contract Vulnerability Pipeline',
     category: 'Data Security & ML',
     emoji: '⛓️',
@@ -70,7 +80,7 @@ export const projectsData = [
     github: 'https://github.com/nashrahjaan53-code/smart-contract-ml-pipeline'
   },
   {
-    id: 8,
+    id: 9,
     title: 'Stock Price Multi-Forecaster',
     category: 'Time Series & Forecasting',
     emoji: '📈',
@@ -80,56 +90,44 @@ export const projectsData = [
     github: 'https://github.com/nashrahjaan53-code/stock-price-forecasting'
   },
   {
-    id: 9,
-    title: 'E-Commerce Sales Analytics',
-    category: 'Data Analytics',
-    emoji: '🛒',
-    description: 'Structured database ETL routines to query sales records, generate user RFM segmentations, and construct cohort retention charts, revealing transactional dynamics.',
-    tech: 'SQLite, Pandas, Python, Plotly, RFM Segments, Cohort Analysis',
-    impact: 'Highlighted a 30% potential revenue uplift through reactivation of inactive high-value segments',
-    github: 'https://github.com/nashrahjaan53-code/ecommerce-analytics',
-    dashboardPort: 8502
-  },
-  {
     id: 10,
-    title: 'GitHub Trending Repo Scraper',
-    category: 'Data Analytics',
-    emoji: '⭐',
-    description: 'Scraped open-source trends from GitHub using custom ingestion agents. Applied correlational coefficients and regressions to star-growth patterns over developer communities.',
-    tech: 'GitHub API, Python, BeautifulSoup, scikit-learn, Plotly, Streamlit',
-    impact: 'Discovered key metrics (fork-to-star ratio) that predict library adoption rates with 85% confidence',
-    github: 'https://github.com/nashrahjaan53-code/github-trending-analysis',
-    dashboardPort: 8501
+    title: 'Real-time Webcam Emotion Detector',
+    category: 'Deep Learning & Vision',
+    emoji: '🎭',
+    description: 'Created a lightweight, real-time facial expression classifier. Operates facial tracking loops through webcams using OpenCV and calls DeepFace classification backends to map facial states.',
+    tech: 'Python, OpenCV, DeepFace, TensorFlow, CNNs, Real-time Feeds',
+    impact: 'Engineered instant, high-frame-rate emotion mappings on local hardware with robust latency limits',
+    github: 'https://github.com/nashrahjaan53-code/emotion-detector'
   },
   {
     id: 11,
-    title: 'AI Resume Propagation Screener',
-    category: 'NLP & Text Mining',
-    emoji: '📄',
-    description: 'Designed a semi-supervised natural language processing pipeline. Utilized scikit-learn\'s Label Propagation algorithm to automatically classify and route text resume profiles using sparse labeled training points.',
-    tech: 'Label Propagation, Semi-Supervised Learning, TF-IDF, NLTK, scikit-learn',
-    impact: 'Classified unstructured applicant files into tech-role taxonomies with 79% classification accuracy',
-    github: 'https://github.com/nashrahjaan53-code/ai-resume-screener'
+    title: 'E-commerce Product Taxonomy',
+    category: 'Spatial Analytics',
+    emoji: '🏷️',
+    description: 'Created an interactive web application running Agglomerative Hierarchical Clustering. Mapped inventory categories and product lineages across retail matrices, defining category nodes.',
+    tech: 'Hierarchical Clustering, SciPy, scikit-learn, Pandas, Streamlit, Plotly',
+    impact: 'Organized messy retail inventories into structured taxonomic distributions',
+    github: 'https://github.com/nashrahjaan53-code/ecommerce-product-taxonomy'
   },
   {
     id: 12,
-    title: 'Disease Classification Gradient Boosting',
-    category: 'Machine Learning',
-    emoji: '🩺',
-    description: 'Evaluated tumor diagnostics using three major gradient boosting frameworks: XGBoost, LightGBM, and CatBoost. Performed grid searches to find optimal hyper-parameters and compared ROC-AUC curves.',
-    tech: 'XGBoost, LightGBM, CatBoost, Grid Search, ROC-AUC, scikit-learn',
-    impact: 'Benchmarked boosting speeds to determine the optimal balance of inference latency and diagnostic accuracy',
-    github: 'https://github.com/nashrahjaan53-code/disease-prediction-boosting'
+    title: 'Product Analytics Platform',
+    category: 'Data Analytics',
+    emoji: '📊',
+    description: 'Designed a product analytics tracker mapping customer engagement. Plots cohort retentions, signup funnels, click heatmaps, and user path transitions to diagnose customer churn factors.',
+    tech: 'Python, Pandas, Plotly, Cohort Calculations, Streamlit, Funnel Tracking',
+    impact: 'Exposed conversion bottlenecks and retention decay loops to optimize product flow configurations',
+    github: 'https://github.com/nashrahjaan53-code/product-analytics'
   },
   {
     id: 13,
-    title: 'Customer Persona PCA Builder',
-    category: 'Data Analytics',
-    emoji: '👥',
-    description: 'Developed an unsupervised learning application using Principal Component Analysis (PCA) to compress 10-dimensional customer behavioral profiles into a 2D map, identifying distinct purchase personas.',
-    tech: 'PCA, K-Means Clustering, StandardScaler, Python, Plotly, Seaborn',
-    impact: 'Reduced dataset dimensionality while retaining 82% of the original variance for clean customer maps',
-    github: 'https://github.com/nashrahjaan53-code/customer-persona-pca'
+    title: 'AI Career Path Predictor',
+    category: 'Machine Learning',
+    emoji: '💼',
+    description: 'Modeled AI/Tech career vectors using semi-supervised self-training algorithms. Constructed a propagation classifier utilizing synthetic skill profiles and text metadata matrices.',
+    tech: 'Semi-Supervised Learning, Self-Training Loop, scikit-learn, Pandas, Plotly',
+    impact: 'Achieved 79% classification accuracy in routing sparse-labeled tech profile categories',
+    github: 'https://github.com/nashrahjaan53-code/ai-career-predictor'
   },
   {
     id: 14,
@@ -140,5 +138,105 @@ export const projectsData = [
     tech: 'Apriori Algorithm, Association Rules, Pandas, MLxtend, Plotly',
     impact: 'Identified strong co-viewing affinities to drive recommendation click-through rates',
     github: 'https://github.com/nashrahjaan53-code/streaming-recommendation-apriori'
+  },
+  {
+    id: 15,
+    title: 'Customer Persona PCA Builder',
+    category: 'Data Analytics',
+    emoji: '👥',
+    description: 'Developed an unsupervised learning application using Principal Component Analysis (PCA) to compress 10-dimensional customer behavioral profiles into a 2D map, identifying distinct purchase personas.',
+    tech: 'PCA, K-Means Clustering, StandardScaler, Python, Plotly, Seaborn',
+    impact: 'Reduced dataset dimensionality while retaining 82% of the original variance for clean customer maps',
+    github: 'https://github.com/nashrahjaan53-code/customer-persona-pca'
+  },
+  {
+    id: 16,
+    title: 'Generative NLP Chatbot',
+    category: 'Generative AI & LLMs',
+    emoji: '💬',
+    description: 'Designed a conversational Streamlit chat agent backed by the Google Gemini API. Integrated session-state memory loops to maintain conversational context and deliver human-like response styles.',
+    tech: 'Streamlit, Gemini API, Session State, Memory Integration, NLP, Python',
+    impact: 'Engineered a highly responsive conversation client retaining state throughout live user inputs',
+    github: 'https://github.com/nashrahjaan53-code/nlp-chatbot-project'
+  },
+  {
+    id: 17,
+    title: 'Brand Color K-Means Extractor',
+    category: 'Deep Learning & Vision',
+    emoji: '🎨',
+    description: 'Developed a computer vision application running K-Means clustering. Analyzes color distributions inside uploaded branding images and isolates primary color centroids.',
+    tech: 'K-Means Clustering, OpenCV, scikit-learn, NumPy, Streamlit, Image Processing',
+    impact: 'Extracted brand hex colors and dynamically mapped dominant color hierarchies',
+    github: 'https://github.com/nashrahjaan53-code/ai-color-palette-generator'
+  },
+  {
+    id: 18,
+    title: 'AI Resume Propagation Screener',
+    category: 'NLP & Text Mining',
+    emoji: '📄',
+    description: 'Designed a semi-supervised natural language processing pipeline. Utilized scikit-learn\'s Label Propagation algorithm to automatically classify and route text resume profiles using sparse labeled training points.',
+    tech: 'Label Propagation, Semi-Supervised Learning, TF-IDF, NLTK, scikit-learn',
+    impact: 'Classified unstructured applicant files into tech-role taxonomies with 79% classification accuracy',
+    github: 'https://github.com/nashrahjaan53-code/ai-resume-screener'
+  },
+  {
+    id: 19,
+    title: 'News Classification Naive Bayes',
+    category: 'NLP & Text Mining',
+    emoji: '📰',
+    description: 'Built a generative news text classifier running Multinomial Naive Bayes models. Analyzes and labels articles into 6 distinct categories utilizing TF-IDF vectorization matrices.',
+    tech: 'Naive Bayes, TF-IDF Vectorization, NLTK, word clouds, scikit-learn, Python',
+    impact: 'Categorized document patterns with robust precision metrics and predictive keyword weights',
+    github: 'https://github.com/nashrahjaan53-code/-news-classification-naive-bayes'
+  },
+  {
+    id: 20,
+    title: 'Disease Classification Gradient Boosting',
+    category: 'Machine Learning',
+    emoji: '🩺',
+    description: 'Evaluated tumor diagnostics using three major gradient boosting frameworks: XGBoost, LightGBM, and CatBoost. Performed grid searches to find optimal hyper-parameters and compared ROC-AUC curves.',
+    tech: 'XGBoost, LightGBM, CatBoost, Grid Search, ROC-AUC, scikit-learn',
+    impact: 'Benchmarked boosting speeds to determine the optimal balance of inference latency and diagnostic accuracy',
+    github: 'https://github.com/nashrahjaan53-code/disease-prediction-boosting'
+  },
+  {
+    id: 21,
+    title: 'VGG / CNN Flower Image Classifier',
+    category: 'Deep Learning & Vision',
+    emoji: '🌸',
+    description: 'Engineered a Convolutional Neural Network (CNN) classifying multi-class flower species from raw image structures. Handles transformations, data augmentations, and deep layer learning.',
+    tech: 'TensorFlow, CNNs, Image Augmentations, Matplotlib, Python',
+    impact: 'Achieved high classification accuracy on raw image datasets using layered convolutional grids',
+    github: 'https://github.com/nashrahjaan53-code/flower-classification'
+  },
+  {
+    id: 22,
+    title: 'Digit Recognition SVM Classifier',
+    category: 'Machine Learning',
+    emoji: '🔢',
+    description: 'Developed an SVM classifier identifying handwritten digits from pixel grid arrays. Compares linear, polynomial, and radial basis function (RBF) kernels to maximize pixel separations.',
+    tech: 'Support Vector Machine, Pixel Ingestion, kernels, scikit-learn, NumPy',
+    impact: 'Achieved near-perfect digit recognition scores using high-dimensional kernel transforms',
+    github: 'https://github.com/nashrahjaan53-code/digit-recognition-svm'
+  },
+  {
+    id: 23,
+    title: 'Mini AI',
+    category: 'Data Analytics',
+    emoji: '💡',
+    description: 'Constructed a minimalist AI sandbox application in HTML, CSS, and vanilla JavaScript to demonstrate front-end script integrations and simple prompt-response mappings.',
+    tech: 'HTML, CSS, JavaScript, Web Integrations, Frontend Engineering',
+    impact: 'Created a ultra-lightweight client UI with minimal script load times',
+    github: 'https://github.com/nashrahjaan53-code/mini-ai'
+  },
+  {
+    id: 24,
+    title: 'LeetCode Algorithmic Solutions',
+    category: 'Competitive Programming',
+    emoji: '🏆',
+    description: 'Curated repository containing optimized code patterns for competitive programming challenges. Features clean, documented algorithms covering Data Structures, SQL Querying, and Math models.',
+    tech: 'Algorithms, Data Structures, SQL, Python, Big-O Optimization',
+    impact: 'Demonstrated deep logical reasoning, data structure mastery, and code efficiency audits',
+    github: 'https://github.com/nashrahjaan53-code/leetcode-solutions'
   }
 ];
