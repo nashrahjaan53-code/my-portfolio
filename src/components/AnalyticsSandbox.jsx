@@ -53,14 +53,14 @@ export default function AnalyticsSandbox() {
       cohort: {
         kpi1: { label: 'Listings Tracked', target: 4500, suffix: ' homes' },
         kpi2: { label: 'Avg Days on Market', target: 42, suffix: ' days' },
-        points: [100, 72, 54, 38, 20, 8], // active listings retention rate
+        points: [100, 72, 54, 38, 20, 8],
         insights: 'Listing retention curves indicate 92% of houses are sold within 12 weeks. High-demand areas see listing duration drop to under 14 days, creating high market velocity.',
         logName: 'LISTINGS_DECAY_CURVE'
       },
       rfm: {
         kpi1: { label: 'Tier A Properties', target: 1240, suffix: ' homes' },
         kpi2: { label: 'Average Price', target: 382, suffix: 'K $' },
-        bars: [25, 45, 20, 10], // AAA, AA, A, B
+        bars: [25, 45, 20, 10],
         labels: ['AAA', 'AA', 'A', 'B'],
         insights: 'Property classification assigns 70% of current inventory to AAA and AA tiers based on structural scores and location indexing. B-tier houses have high discount elasticities.',
         logName: 'INVESTMENT_RATING_SEGMENTS'
@@ -98,7 +98,7 @@ export default function AnalyticsSandbox() {
       rfm: {
         kpi1: { label: 'High Activity Repos', target: 215, suffix: ' repos' },
         kpi2: { label: 'Avg Stars', target: 4500, suffix: ' stars' },
-        bars: [10, 25, 45, 20], // Elite, Active, Growing, Inactive
+        bars: [10, 25, 45, 20],
         labels: ['Elite', 'Active', 'Grow', 'Inact'],
         insights: 'Repositores grouped by activity metric segments. 10% fall into the "Elite" category, driving 75% of total star accumulation, indicating a heavily skewed Pareto distribution.',
         logName: 'REPO_ENGAGEMENT_CLASSIFICATION'
@@ -129,14 +129,14 @@ export default function AnalyticsSandbox() {
       cohort: {
         kpi1: { label: 'Daily Reports Loaded', target: 8200, suffix: ' cases' },
         kpi2: { label: 'Avg Recovery Time', target: 14.2, suffix: ' days' },
-        points: [100, 65, 32, 15, 8, 4], // active case duration retention
+        points: [100, 65, 32, 15, 8, 4],
         insights: 'Recovery rate cohort tracking shows 96% of cases resolved within 28 days. Long-covid cases (active past 28 days) make up 4% of total infection cohorts.',
         logName: 'ACTIVE_CASES_DECAY'
       },
       rfm: {
         kpi1: { label: 'Critical Care Tiers', target: 540, suffix: ' cases' },
         kpi2: { label: 'Avg Risk Index', target: 7.2, suffix: ' / 10' },
-        bars: [12, 18, 50, 20], // High Risk, Medium, Stable, Recovered
+        bars: [12, 18, 50, 20],
         labels: ['High', 'Med', 'Stable', 'Recov'],
         insights: 'Risk grading groups patient demographics. High risk cases (12% of sample) correspond highly to age index and pre-existing metrics, suggesting targeted healthcare resource planning.',
         logName: 'PATIENT_RISK_DISTRIBUTION'
@@ -157,9 +157,199 @@ export default function AnalyticsSandbox() {
       forecast: {
         kpi1: { label: 'Trend Turning Point', target: 18, suffix: ' days' },
         kpi2: { label: 'Forecast Fit (R2)', target: 91.5, suffix: '%' },
-        points: [140, 158, 162, 150, 125, 95], // cases peaking and dropping
+        points: [140, 158, 162, 150, 125, 95],
         insights: 'Peak case trajectory modeling suggests a peak within 18 days, followed by a steady drop. Vaccination speedups are projected to contract the peak timeline by 4 days.',
         logName: 'INFECTION_CURVE_PREDICTOR'
+      }
+    },
+    trading: {
+      name: 'RL Financial Trading Logs',
+      cohort: {
+        kpi1: { label: 'Training Episodes', target: 1200, suffix: ' runs' },
+        kpi2: { label: 'Episode Stable Rate', target: 82.5, suffix: '%' },
+        points: [100, 84, 76, 68, 55, 34.8],
+        insights: 'RL Agent trajectory decay indicates strong performance stability over 1200 episodes. Position size limits keep drawdown risk constrained under 5% throughout trading loops.',
+        logName: 'RL_AGENT_TRAJECTORY_DECAY'
+      },
+      rfm: {
+        kpi1: { label: 'Profitable Trades', target: 712, suffix: ' trades' },
+        kpi2: { label: 'Avg Sharpe Ratio', target: 2.84, suffix: '' },
+        bars: [28, 42, 20, 10],
+        labels: ['Long', 'Short', 'Hedge', 'Inact'],
+        insights: 'Segmenting trade operations reveals 70% of positive returns are driven by active Long and Short positions, with Hedging rules successfully buffering systematic volatility loops.',
+        logName: 'TRADE_STRATEGY_SEGMENTS'
+      },
+      correlation: {
+        kpi1: { label: 'Leverage-Drawdown Corr', target: 0.76, suffix: '' },
+        kpi2: { label: 'Volatility-Return Corr', target: -0.32, suffix: '' },
+        heatmap: [
+          [1.0, 0.76, -0.32, 0.45],
+          [0.76, 1.0, -0.42, 0.22],
+          [-0.32, -0.42, 1.0, 0.15],
+          [0.45, 0.22, 0.15, 1.0]
+        ],
+        variables: ['Leverage', 'Drawdown', 'Volatility', 'Return'],
+        insights: 'Correlational analysis confirms leverage settings possess a high risk coefficient (0.76) when mapped directly against peak portfolio drawdowns.',
+        logName: 'TRADING_RISK_MATRICES'
+      },
+      forecast: {
+        kpi1: { label: 'Projected Sharpe Gain', target: 3.12, suffix: '' },
+        kpi2: { label: 'Confidence Interval', target: 95.5, suffix: '%' },
+        points: [2.1, 2.3, 2.5, 2.8, 2.9, 3.12],
+        insights: 'DQN and PPO reinforcement algorithms forecast a Sharpe Ratio expansion to 3.12 in Q3, backed by continuous reward-shaping optimizers.',
+        logName: 'TRADING_REWARD_FORECAST'
+      }
+    },
+    traffic: {
+      name: 'DBSCAN Spatial Traffic Logs',
+      cohort: {
+        kpi1: { label: 'Coordinate Nodes', target: 8900, suffix: ' pts' },
+        kpi2: { label: 'Isolated Noise Ratio', target: 12.4, suffix: '%' },
+        points: [100, 85, 70, 52, 30, 12.4],
+        insights: 'Clustering analysis identifies dense coordinate density nodes. Noise isolation filters out 12% of outlying readings as GPS sensor drift anomalies.',
+        logName: 'TRAFFIC_NODE_DECAY'
+      },
+      rfm: {
+        kpi1: { label: 'Isolated Hubs', target: 345, suffix: ' hubs' },
+        kpi2: { label: 'Avg Node Density', target: 124, suffix: ' / m²' },
+        bars: [18, 32, 40, 10],
+        labels: ['High', 'Med', 'Low', 'Noise'],
+        insights: 'Density grouping assigns 50% of traffic paths to Medium and High density hubs, indicating clear commuter hubs along transit lines.',
+        logName: 'SPATIAL_DENSITY_PROFILES'
+      },
+      correlation: {
+        kpi1: { label: 'Time-Density Corr', target: 0.62, suffix: '' },
+        kpi2: { label: 'Speed-Density Corr', target: -0.58, suffix: '' },
+        heatmap: [
+          [1.0, 0.62, -0.58, 0.18],
+          [0.62, 1.0, -0.48, 0.25],
+          [-0.58, -0.48, 1.0, -0.12],
+          [0.18, 0.25, -0.12, 1.0]
+        ],
+        variables: ['Time', 'Density', 'Speed', 'Distance'],
+        insights: 'Commute hours show a positive correlation (0.62) with hub density, causing a corresponding drop (-0.58) in travel speed.',
+        logName: 'TRAFFIC_VARIABLE_HEATMAP'
+      },
+      forecast: {
+        kpi1: { label: 'Peak Commute Growth', target: 14.8, suffix: '%' },
+        kpi2: { label: 'Model Fit (R2)', target: 93.2, suffix: '%' },
+        points: [12.0, 12.8, 13.5, 14.0, 14.5, 14.8],
+        insights: 'ARIMA modeling forecasts a 14.8% spike in pedestrian traffic densities near urban coordinates, suggesting transit adjustments.',
+        logName: 'TRAFFIC_VOLUME_FORECASTER'
+      }
+    },
+    medical: {
+      name: 'OrthoAssist AI Clinical Records',
+      cohort: {
+        kpi1: { label: 'Radiograph Ingests', target: 3120, suffix: ' scans' },
+        kpi2: { label: 'Verification Decay', target: 12.5, suffix: '%' },
+        points: [100, 72, 48, 31, 18, 12.5],
+        insights: 'Prescription safety auditing decay charts show dual-check validations are completed within 90 seconds in 87.5% of cases.',
+        logName: 'CLINICAL_VERIFY_DECAY'
+      },
+      rfm: {
+        kpi1: { label: 'Severe Anomalies', target: 184, suffix: ' cases' },
+        kpi2: { label: 'Gemini Safety Match', target: 98.4, suffix: '%' },
+        bars: [45, 30, 15, 10],
+        labels: ['Fract', 'Disloc', 'Joint', 'Normal'],
+        insights: 'Demographic groupings classify 45% of orthopaedic scans as active fractures, requiring immediate prescription checks.',
+        logName: 'ORTHO_DIAGNOSTIC_SEGMENTS'
+      },
+      correlation: {
+        kpi1: { label: 'Age-Fracture Corr', target: 0.65, suffix: '' },
+        kpi2: { label: 'Severity-Verify Corr', target: 0.78, suffix: '' },
+        heatmap: [
+          [1.0, 0.65, 0.42, 0.78],
+          [0.65, 1.0, 0.28, 0.52],
+          [0.42, 0.28, 1.0, 0.31],
+          [0.78, 0.52, 0.31, 1.0]
+        ],
+        variables: ['Age', 'Fracture', 'Joint', 'Verify'],
+        insights: 'High correlation (0.78) between anomaly severity and Gemini validation latency, indicating extra parsing loops.',
+        logName: 'CLINICAL_CORRELATION_MATRIX'
+      },
+      forecast: {
+        kpi1: { label: 'Model Forecast (AUC)', target: 96.2, suffix: '%' },
+        kpi2: { label: 'Confidence Margin', target: 98.8, suffix: '%' },
+        points: [89.2, 91.4, 93.0, 94.5, 95.8, 96.2],
+        insights: 'Vision Transformer predictions forecast a peak diagnostic AUC of 96.2% as training data parameters expand in phase 3.',
+        logName: 'MODEL_PRECISION_FORECAST'
+      }
+    },
+    security: {
+      name: 'Ethereum Smart Contracts',
+      cohort: {
+        kpi1: { label: 'Contracts Audited', target: 1240, suffix: ' repos' },
+        kpi2: { label: 'False Positive Decay', target: 5.4, suffix: '%' },
+        points: [100, 42, 22, 12, 7, 5.4],
+        insights: 'Security auditing loops successfully prune static analysis warning counts within 4 syntax checks.',
+        logName: 'VULNERABILITY_DECAY_CURVE'
+      },
+      rfm: {
+        kpi1: { label: 'Vulnerable Files', target: 284, suffix: ' files' },
+        kpi2: { label: 'Average Gas Cost', target: 820, suffix: ' gwei' },
+        bars: [12, 24, 48, 16],
+        labels: ['Reent', 'Oflow', 'Access', 'Secure'],
+        insights: 'Stack ensemble models classify bytecode alerts. 12% indicate high-severity Reentrancy vulnerability potentials.',
+        logName: 'BYTECODE_RISK_SEGMENTS'
+      },
+      correlation: {
+        kpi1: { label: 'Lines-Vulnerability', target: 0.58, suffix: '' },
+        kpi2: { label: 'Complexity-Gas Corr', target: 0.82, suffix: '' },
+        heatmap: [
+          [1.0, 0.58, 0.82, 0.44],
+          [0.58, 1.0, 0.68, 0.35],
+          [0.82, 0.68, 1.0, 0.41],
+          [0.44, 0.35, 0.41, 1.0]
+        ],
+        variables: ['Lines', 'Vulner', 'Gas', 'Calls'],
+        insights: 'Cyclomatic code complexity shows a very high correlation (0.82) with contract gas execution requirements.',
+        logName: 'CONTRACT_COMPLEXITY_HEATMAP'
+      },
+      forecast: {
+        kpi1: { label: 'Vuln Detection Rate', target: 94.5, suffix: '%' },
+        kpi2: { label: 'Random Forest Fit', target: 92.8, suffix: '%' },
+        points: [82.0, 85.4, 88.0, 91.2, 93.0, 94.5],
+        insights: 'Stacking ensembles project an increase in audit coverage to 94.5% using custom bytecode feature vector models.',
+        logName: 'DETECTOR_ACCURACY_PROJECTION'
+      }
+    },
+    stock: {
+      name: 'Google Stock Time-Series',
+      cohort: {
+        kpi1: { label: 'Historical Days', target: 1250, suffix: ' days' },
+        kpi2: { label: 'Mean Absolute Error', target: 4.82, suffix: ' $' },
+        points: [100, 68, 45, 28, 15, 6.2],
+        insights: 'Backtesting residuals show error margins decreasing exponentially within 5 steps of rolling forecast updates.',
+        logName: 'FORECAST_RESIDUAL_DECAY'
+      },
+      rfm: {
+        kpi1: { label: 'Outperforming Days', target: 780, suffix: ' days' },
+        kpi2: { label: 'Avg Daily Return', target: 1.25, suffix: '%' },
+        bars: [15, 45, 30, 10],
+        labels: ['ARIMA', 'Prophet', 'LSTM', 'Hold'],
+        insights: 'Model comparison categorizes daily forecasting accuracy. LSTM model drives 45% of the most accurate stock direction predictions.',
+        logName: 'MODEL_EVALUATION_SEGMENTS'
+      },
+      correlation: {
+        kpi1: { label: 'Open-Close Corr', target: 0.98, suffix: '' },
+        kpi2: { label: 'Volume-Volatility', target: 0.45, suffix: '' },
+        heatmap: [
+          [1.0, 0.98, 0.45, 0.12],
+          [0.98, 1.0, 0.48, 0.15],
+          [0.45, 0.48, 1.0, 0.28],
+          [0.12, 0.15, 0.28, 1.0]
+        ],
+        variables: ['Open', 'Close', 'Volume', 'Return'],
+        insights: 'Open and Close prices show a nearly linear correlation (0.98), while trading volume moderately correlates with intraday volatility.',
+        logName: 'TIME_SERIES_CORR_MATRIX'
+      },
+      forecast: {
+        kpi1: { label: 'GOOGL Forecast Price', target: 182.5, suffix: ' $' },
+        kpi2: { label: 'LSTM Directional Fit', target: 88.4, suffix: '%' },
+        points: [156, 162, 169, 174, 178, 182.5],
+        insights: 'LSTM sequential forecasting models project a baseline price of $182.50 by next month, maintaining a positive growth trend.',
+        logName: 'LSTM_STOCK_VALUATION_FORECAST'
       }
     }
   };
@@ -240,10 +430,15 @@ export default function AnalyticsSandbox() {
             onChange={(e) => setDataset(e.target.value)}
             disabled={isAnalyzing}
           >
-            <option value="ecommerce">E-commerce Sales</option>
-            <option value="realestate">Real Estate Housing</option>
-            <option value="github">GitHub Trends</option>
-            <option value="covid">COVID-19 Pandemic</option>
+            <option value="ecommerce">E-commerce Retail Sales</option>
+            <option value="realestate">Real Estate Housing Market</option>
+            <option value="github">GitHub Open Source Trends</option>
+            <option value="covid">COVID-19 Pandemic Data</option>
+            <option value="trading">RL Financial Trading Logs</option>
+            <option value="traffic">DBSCAN Spatial Traffic Logs</option>
+            <option value="medical">OrthoAssist AI X-ray Records</option>
+            <option value="security">Ethereum Smart Contracts</option>
+            <option value="stock">Google Stock Price forecasts</option>
           </select>
         </div>
       </div>
