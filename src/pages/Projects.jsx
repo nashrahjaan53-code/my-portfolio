@@ -6,7 +6,7 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [activeProject, setActiveProject] = useState(projectsData[0]);
 
-  const categories = ['all', 'Data Analytics', 'Machine Learning', 'ETL & Reporting', 'NLP & Text Mining'];
+  const categories = ['all', 'Data Analytics', 'Machine Learning', 'Deep Learning & CV', 'NLP & Generative AI', 'Algorithms & Programming'];
 
   const filteredProjects = selectedCategory === 'all'
     ? projectsData

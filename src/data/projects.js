@@ -2,7 +2,7 @@ export const projectsData = [
   {
     id: 1,
     title: 'Reinforcement Learning Risk Trader',
-    category: 'Quantitative Analysis',
+    category: 'Machine Learning',
     emoji: '📈',
     description: 'Designed an end-to-end ML pipeline featuring a custom financial trading environment. Integrates strict risk management boundaries (stop-loss, position sizing, drawdown limits) into an object-oriented reinforcement learning frame.',
     tech: 'Python, Gym/Gymnasium, Stable-Baselines3, Pandas, NumPy, Matplotlib',
@@ -12,7 +12,7 @@ export const projectsData = [
   {
     id: 2,
     title: 'Geospatial Traffic Tracker',
-    category: 'Spatial Analytics',
+    category: 'Data Analytics',
     emoji: '🗺️',
     description: 'Built an end-to-end unsupervised machine learning application implementing DBSCAN clustering to detect spatial foot-traffic density hubs. Processes raw latitude/longitude coordinates and filters out geospatial noise/anomalies.',
     tech: 'Python, DBSCAN, scikit-learn, Folium, Geopandas, Shapely',
@@ -22,7 +22,7 @@ export const projectsData = [
   {
     id: 3,
     title: 'OrthoAssist AI',
-    category: 'Deep Learning & Vision',
+    category: 'Deep Learning & CV',
     emoji: '🩻',
     description: 'Developed an asynchronous FastAPI and Streamlit decision-support application. Pairs a PyTorch Vision Transformer (ViT) with multimodal Gemini 2.5 Flash to evaluate orthopedic X-rays and validate prescription safety.',
     tech: 'PyTorch, Vision Transformer, FastAPI, Gemini API, Streamlit, Asyncio',
@@ -32,7 +32,7 @@ export const projectsData = [
   {
     id: 4,
     title: 'Code Fine-Tuning Pipeline',
-    category: 'Generative AI & LLMs',
+    category: 'NLP & Generative AI',
     emoji: '🧠',
     description: 'Established a fine-tuning framework for Mistral-7B on the CodeAlpaca-20k dataset. Utilized QLoRA (4-bit quantization + LoRA adapters) to build a domain-specific code generation assistant, optimizing training on consumer GPUs.',
     tech: 'Transformers, PEFT, QLoRA, PyTorch, HuggingFace, BitsAndBytes',
@@ -62,7 +62,7 @@ export const projectsData = [
   {
     id: 7,
     title: 'RAG AI Agent',
-    category: 'Generative AI & LLMs',
+    category: 'NLP & Generative AI',
     emoji: '🤖',
     description: 'Developed a high-fidelity Retrieval-Augmented Generation (RAG) agent integrating custom text vector databases, semantic search pipelines, and LLM text generation to query nested technical documents.',
     tech: 'LangChain, LlamaIndex, Vector DB, Python, LLMs, Sentence-Transformers',
@@ -72,7 +72,7 @@ export const projectsData = [
   {
     id: 8,
     title: 'Smart Contract Vulnerability Pipeline',
-    category: 'Data Security & ML',
+    category: 'Machine Learning',
     emoji: '⛓️',
     description: 'Designed a production-grade machine learning audit pipeline. Employs a stacked ensemble model (Random Forest + LightGBM) to inspect Ethereum bytecode matrices and detect reentrancy and overflow smart contract vulnerabilities.',
     tech: 'Random Forest, LightGBM, Stacked Ensembles, Pandas, Solidity Parser',
@@ -82,7 +82,7 @@ export const projectsData = [
   {
     id: 9,
     title: 'Stock Price Multi-Forecaster',
-    category: 'Time Series & Forecasting',
+    category: 'Machine Learning',
     emoji: '📈',
     description: 'Engineered an advanced time-series forecasting engine predicting Google (GOOGL) valuations. Compares three distinct model classes side-by-side: statistical (ARIMA), additive regression (Facebook Prophet), and deep learning (LSTM).',
     tech: 'ARIMA, FBProphet, LSTM, TensorFlow, Keras, yfinance, Pandas',
@@ -92,7 +92,7 @@ export const projectsData = [
   {
     id: 10,
     title: 'Real-time Webcam Emotion Detector',
-    category: 'Deep Learning & Vision',
+    category: 'Deep Learning & CV',
     emoji: '🎭',
     description: 'Created a lightweight, real-time facial expression classifier. Operates facial tracking loops through webcams using OpenCV and calls DeepFace classification backends to map facial states.',
     tech: 'Python, OpenCV, DeepFace, TensorFlow, CNNs, Real-time Feeds',
@@ -102,7 +102,7 @@ export const projectsData = [
   {
     id: 11,
     title: 'E-commerce Product Taxonomy',
-    category: 'Spatial Analytics',
+    category: 'Data Analytics',
     emoji: '🏷️',
     description: 'Created an interactive web application running Agglomerative Hierarchical Clustering. Mapped inventory categories and product lineages across retail matrices, defining category nodes.',
     tech: 'Hierarchical Clustering, SciPy, scikit-learn, Pandas, Streamlit, Plotly',
@@ -152,7 +152,7 @@ export const projectsData = [
   {
     id: 16,
     title: 'Generative NLP Chatbot',
-    category: 'Generative AI & LLMs',
+    category: 'NLP & Generative AI',
     emoji: '💬',
     description: 'Designed a conversational Streamlit chat agent backed by the Google Gemini API. Integrated session-state memory loops to maintain conversational context and deliver human-like response styles.',
     tech: 'Streamlit, Gemini API, Session State, Memory Integration, NLP, Python',
@@ -162,7 +162,7 @@ export const projectsData = [
   {
     id: 17,
     title: 'Brand Color K-Means Extractor',
-    category: 'Deep Learning & Vision',
+    category: 'Deep Learning & CV',
     emoji: '🎨',
     description: 'Developed a computer vision application running K-Means clustering. Analyzes color distributions inside uploaded branding images and isolates primary color centroids.',
     tech: 'K-Means Clustering, OpenCV, scikit-learn, NumPy, Streamlit, Image Processing',
@@ -172,7 +172,7 @@ export const projectsData = [
   {
     id: 18,
     title: 'AI Resume Propagation Screener',
-    category: 'NLP & Text Mining',
+    category: 'NLP & Generative AI',
     emoji: '📄',
     description: 'Designed a semi-supervised natural language processing pipeline. Utilized scikit-learn\'s Label Propagation algorithm to automatically classify and route text resume profiles using sparse labeled training points.',
     tech: 'Label Propagation, Semi-Supervised Learning, TF-IDF, NLTK, scikit-learn',
@@ -182,7 +182,7 @@ export const projectsData = [
   {
     id: 19,
     title: 'News Classification Naive Bayes',
-    category: 'NLP & Text Mining',
+    category: 'NLP & Generative AI',
     emoji: '📰',
     description: 'Built a generative news text classifier running Multinomial Naive Bayes models. Analyzes and labels articles into 6 distinct categories utilizing TF-IDF vectorization matrices.',
     tech: 'Naive Bayes, TF-IDF Vectorization, NLTK, word clouds, scikit-learn, Python',
@@ -202,7 +202,7 @@ export const projectsData = [
   {
     id: 21,
     title: 'VGG / CNN Flower Image Classifier',
-    category: 'Deep Learning & Vision',
+    category: 'Deep Learning & CV',
     emoji: '🌸',
     description: 'Engineered a Convolutional Neural Network (CNN) classifying multi-class flower species from raw image structures. Handles transformations, data augmentations, and deep layer learning.',
     tech: 'TensorFlow, CNNs, Image Augmentations, Matplotlib, Python',
@@ -221,8 +221,8 @@ export const projectsData = [
   },
   {
     id: 23,
-    title: 'Mini AI',
-    category: 'Data Analytics',
+    title: 'Mini AI Sandbox',
+    category: 'Algorithms & Programming',
     emoji: '💡',
     description: 'Constructed a minimalist AI sandbox application in HTML, CSS, and vanilla JavaScript to demonstrate front-end script integrations and simple prompt-response mappings.',
     tech: 'HTML, CSS, JavaScript, Web Integrations, Frontend Engineering',
@@ -232,7 +232,7 @@ export const projectsData = [
   {
     id: 24,
     title: 'LeetCode Algorithmic Solutions',
-    category: 'Competitive Programming',
+    category: 'Algorithms & Programming',
     emoji: '🏆',
     description: 'Curated repository containing optimized code patterns for competitive programming challenges. Features clean, documented algorithms covering Data Structures, SQL Querying, and Math models.',
     tech: 'Algorithms, Data Structures, SQL, Python, Big-O Optimization',
