@@ -36,84 +36,50 @@ export default function InteractiveBackground({ theme = 'light' }) {
     window.addEventListener('resize', handleResize);
 
     // ==========================================
-    // LIGHT MODE: GOLDEN PARTICLES CONSTELATION
+    // LIGHT MODE: GENTLE FLOWING GOLDEN DATA WAVES
     // ==========================================
-    let particlesArray = [];
-    const numParticles = Math.min(130, Math.floor((width * height) / 10000));
+    let phase = 0;
 
-    class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.size = Math.random() * 3.5 + 2.5;
-        this.speedX = Math.random() * 0.7 - 0.35;
-        this.speedY = Math.random() * 0.7 - 0.35;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        // Wrap around boundaries
-        if (this.x < 0) this.x = width;
-        if (this.x > width) this.x = 0;
-        if (this.y < 0) this.y = height;
-        if (this.y > height) this.y = 0;
-      }
-      draw() {
-        ctx.fillStyle = theme === 'dark' ? 'rgba(223, 197, 136, 0.55)' : 'rgba(184, 144, 71, 0.45)';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    const init = () => {
-      particlesArray = [];
-      for (let i = 0; i < numParticles; i++) {
-        particlesArray.push(new Particle());
-      }
-    };
-
-    const drawParticles = () => {
+    const drawWaves = () => {
       ctx.clearRect(0, 0, width, height);
+      phase += 0.003;
 
-      // Draw and connect particles
-      for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-        particlesArray[i].draw();
+      const waveConfigs = [
+        { amplitude: 55, period: 0.002, offset: 0, opacity: 0.14, speed: 0.8, yOffset: 0.46 },
+        { amplitude: 35, period: 0.0038, offset: Math.PI / 3, opacity: 0.09, speed: -1.0, yOffset: 0.53 },
+        { amplitude: 75, period: 0.0016, offset: Math.PI * 1.5, opacity: 0.06, speed: 0.6, yOffset: 0.60 }
+      ];
 
-        // Connect lines
-        for (let j = i + 1; j < particlesArray.length; j++) {
-          const dx = particlesArray[i].x - particlesArray[j].x;
-          const dy = particlesArray[i].y - particlesArray[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+      waveConfigs.forEach((cfg) => {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(184, 144, 71, ${cfg.opacity})`;
+        ctx.lineWidth = 1.6;
 
-          if (dist < 150) {
-            ctx.strokeStyle = `rgba(184, 144, 71, ${0.25 * (1 - dist / 150)})`;
-            ctx.lineWidth = 0.8;
-            ctx.beginPath();
-            ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-            ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-            ctx.stroke();
+        for (let x = 0; x < width; x += 4) {
+          let baseVal = height * cfg.yOffset;
+          let angle = x * cfg.period + (phase * cfg.speed) + cfg.offset;
+          
+          let y = baseVal + 
+                  Math.sin(angle) * cfg.amplitude + 
+                  Math.cos(x * 0.0008 - phase * 0.4) * (cfg.amplitude * 0.35);
+
+          // Cursor interactive gravity warp
+          if (mouse.x !== null && mouse.y !== null) {
+            const dx = x - mouse.x;
+            const dy = y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            
+            if (dist < 200) {
+              const force = (200 - dist) / 200;
+              y += (mouse.y - y) * force * 0.28;
+            }
           }
-        }
 
-        // Connect to mouse
-        if (mouse.x !== null && mouse.y !== null) {
-          const dx = particlesArray[i].x - mouse.x;
-          const dy = particlesArray[i].y - mouse.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < mouse.radius) {
-            ctx.strokeStyle = `rgba(184, 144, 71, ${0.35 * (1 - dist / mouse.radius)})`;
-            ctx.lineWidth = 1.0;
-            ctx.beginPath();
-            ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
-          }
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
         }
-      }
+        ctx.stroke();
+      });
     };
 
     // ==========================================
@@ -165,7 +131,6 @@ export default function InteractiveBackground({ theme = 'light' }) {
     // ==========================================
     // ANIMATION LOOP ROUTER
     // ==========================================
-    init();
 
     let lastTime = 0;
     const fpsInterval = 1000 / 30; // Cap Matrix at 30fps for legibility and efficiency
@@ -178,7 +143,7 @@ export default function InteractiveBackground({ theme = 'light' }) {
           lastTime = timestamp - (elapsed % fpsInterval);
         }
       } else {
-        drawParticles();
+        drawWaves();
       }
       animationFrameId = requestAnimationFrame(animate);
     };
