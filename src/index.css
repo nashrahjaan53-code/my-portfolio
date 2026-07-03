@@ -6,13 +6,16 @@
   --text-secondary: #3c3935;
   --text-tertiary: #87817a;
   --accent-gold: #b89047;
-  --accent-gold-light: rgba(184, 144, 71, 0.15);
+  --accent-gold-light: rgba(184, 144, 71, 0.12);
   --accent-gold-dark: #8c6a2c;
   --border-gold: rgba(184, 144, 71, 0.22);
   --border-subtle: rgba(184, 144, 71, 0.08);
   --shadow-subtle: 0 8px 30px rgba(184, 144, 71, 0.04);
   --shadow-medium: 0 16px 40px rgba(184, 144, 71, 0.07);
   --shadow-hover: 0 24px 60px rgba(184, 144, 71, 0.12);
+  
+  --grid-color-1: rgba(184, 144, 71, 0.08);
+  --grid-color-2: rgba(184, 144, 71, 0.02);
   
   --font-heading: 'Fraunces', Georgia, serif;
   --font-body: 'Space Grotesk', -apple-system, sans-serif;
@@ -26,6 +29,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0a0908;
+  --bg-secondary: #141210;
+  --bg-card: #181614;
+  --text-primary: #fafaf9;
+  --text-secondary: #d6cfc7;
+  --text-tertiary: #a39c94;
+  --accent-gold: #dfc588;
+  --accent-gold-light: rgba(223, 197, 136, 0.12);
+  --accent-gold-dark: #bba268;
+  --border-gold: rgba(223, 197, 136, 0.35);
+  --border-subtle: rgba(223, 197, 136, 0.15);
+  --shadow-subtle: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-medium: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 24px 60px rgba(0, 0, 0, 0.8);
+  
+  --grid-color-1: rgba(223, 197, 136, 0.06);
+  --grid-color-2: rgba(223, 197, 136, 0.015);
 }
 
 *, *::before, *::after {
@@ -36,13 +60,14 @@ body {
   margin: 0;
   background-color: var(--bg-primary);
   background-image: 
-    radial-gradient(rgba(184, 144, 71, 0.08) 1.5px, transparent 1.5px),
-    linear-gradient(rgba(184, 144, 71, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(184, 144, 71, 0.02) 1px, transparent 1px);
+    radial-gradient(var(--grid-color-1) 1.5px, transparent 1.5px),
+    linear-gradient(var(--grid-color-2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color-2) 1px, transparent 1px);
   background-size: 24px 24px, 48px 48px, 48px 48px;
   color: var(--text-primary);
   font-family: var(--font-body);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {

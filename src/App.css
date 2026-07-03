@@ -1158,10 +1158,176 @@
   align-items: center;
 }
 
-@media (max-width: 768px) {
-  .leetcode-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 24px !important;
-  }
+/* Cursor Glow Effect */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(184, 144, 71, 0.05) 0%, rgba(184, 144, 71, 0.01) 40%, transparent 75%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  mix-blend-mode: screen;
+  transition: background 0.3s ease;
+}
+[data-theme='dark'] .cursor-glow {
+  background: radial-gradient(circle, rgba(223, 197, 136, 0.07) 0%, rgba(223, 197, 136, 0.015) 45%, transparent 75%);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 38px;
+  height: 38px;
+}
+.theme-toggle-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background-color: var(--bg-secondary);
+  transform: scale(1.05);
+}
+
+/* Terminal Card Styles */
+.terminal-card {
+  background-color: #0c0a09;
+  border: 1px solid var(--border-gold);
+  border-radius: 12px;
+  font-family: var(--font-mono);
+  color: #dfc588;
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  text-align: left;
+}
+.terminal-header {
+  background-color: #14110f;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(184, 144, 71, 0.15);
+}
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+.terminal-dot-item {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.terminal-title-text {
+  font-size: 11px;
+  color: #87817a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.terminal-window {
+  padding: 20px;
+  height: 300px;
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.terminal-line {
+  margin-bottom: 8px;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+.terminal-prompt-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.terminal-prompt {
+  color: #b89047;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.terminal-input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fafaf9;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  flex-grow: 1;
+  padding: 0;
+}
+
+/* Interactive Timeline Card expansion */
+.timeline-item-interactive {
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+.timeline-item-interactive:hover {
+  background-color: var(--bg-card);
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-subtle);
+}
+.timeline-expand-btn {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-gold-dark);
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.timeline-expanded-content {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-subtle);
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Visitor Counter styles */
+.visitor-counter-badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-subtle);
+}
+.visitor-counter-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulse-dot 1.8s infinite;
+}
+@keyframes pulse-dot {
+  0% { transform: scale(0.9); opacity: 0.4; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.4; }
+}
+
+/* Custom transitions for major elements */
+.card-3d, .progress-bar, .hero-pill, .btn, .navbar, .footer, .showroom-card {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }

@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import GoldenSpline from '../components/GoldenSpline';
 import Tilt3D from '../components/Tilt3D';
 import AnalyticsSandbox from '../components/AnalyticsSandbox';
+import TypingHeadline from '../components/TypingHeadline';
+import CommandLineTerminal from '../components/CommandLineTerminal';
 
 export default function Home() {
   const primaryPhoto = 'profile.jpg';
   const [photoSrc, setPhotoSrc] = useState(primaryPhoto);
+  const [visitorCount, setVisitorCount] = useState(24842);
+
+  useEffect(() => {
+    const currentCount = parseInt(localStorage.getItem('portfolio_visitors') || '24842', 10);
+    const newCount = currentCount + Math.floor(Math.random() * 3) + 1;
+    localStorage.setItem('portfolio_visitors', newCount.toString());
+    setVisitorCount(newCount);
+  }, []);
 
   const handlePhotoError = () => {
-    // If user's image fails, hide the image or use background
     setPhotoSrc(null);
   };
 
@@ -33,8 +41,6 @@ export default function Home() {
 
   return (
     <>
-      <GoldenSpline />
-      
       <main style={{ position: 'relative', zIndex: 2 }}>
         <div className="ticker-container">
           <div className="ticker-wrap">
@@ -68,13 +74,20 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="kicker">Srinagar, Jammu & Kashmir, India</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginBottom: '16px' }}>
+                <span className="kicker" style={{ marginBottom: 0 }}>Srinagar, Jammu & Kashmir, India</span>
+                <div className="visitor-counter-badge">
+                  <span className="visitor-counter-dot" />
+                  <span>VISITOR #{visitorCount.toLocaleString()} // ACTIVE NOW</span>
+                </div>
+              </div>
+              
               <h1 className="hero-title">
                 Nashrah Khan<br />
                 <span>Data Analyst & BI Developer</span>
               </h1>
-              <p className="hero-subtitle">
-                Translating unstructured databases into actionable business intelligence. Specialized in SQL database architecture, Python ETL pipeline development, interactive dashboarding, and statistical modeling that drive revenue growth.
+              <p className="hero-subtitle" style={{ minHeight: '54px' }}>
+                <TypingHeadline />
               </p>
               
               <div className="hero-pills">
@@ -163,6 +176,23 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <AnalyticsSandbox />
+          </motion.div>
+        </section>
+
+        {/* COMMAND LINE TERMINAL SECTION */}
+        <section className="container" style={{ padding: '60px 24px', borderTop: '1px solid var(--border-subtle)' }}>
+          <div className="section-header">
+            <h2>Data OS Console</h2>
+            <p>Interact with the terminal shell to query database stats, technical skills, and background indices.</p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            style={{ maxWidth: '800px', margin: '0 auto' }}
+          >
+            <CommandLineTerminal />
           </motion.div>
         </section>
 
