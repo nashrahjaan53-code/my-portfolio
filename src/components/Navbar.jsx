@@ -21,7 +21,7 @@ export default function Navbar({ theme, toggleTheme, visitorCount }) {
           
           <div className="navbar-visitor-badge" title="Persistent portfolio views // Active connection status verified">
             <span className="visitor-dot-pulse" />
-            <span>SYS_LOAD: {visitorCount?.toLocaleString()}</span>
+            <span>SYS_LOAD: {visitorCount !== null ? visitorCount.toLocaleString() : '--'}</span>
           </div>
 
           <button 

@@ -14,7 +14,7 @@ export default function App() {
   });
 
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
-  const [visitorCount, setVisitorCount] = useState(24842);
+  const [visitorCount, setVisitorCount] = useState(null);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -30,10 +30,17 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const currentCount = parseInt(localStorage.getItem('portfolio_visitors') || '24842', 10);
-    const newCount = currentCount + Math.floor(Math.random() * 3) + 1;
-    localStorage.setItem('portfolio_visitors', newCount.toString());
-    setVisitorCount(newCount);
+    fetch('https://api.counterapi.dev/v1/nashrahjaan53-portfolio/visits/up')
+      .then(res => res.json())
+      .then(data => {
+        if (data && typeof data.count === 'number') {
+          setVisitorCount(data.count);
+        }
+      })
+      .catch(err => {
+        console.error('Error fetching visitor counter:', err);
+        setVisitorCount(null);
+      });
   }, []);
 
   const toggleTheme = () => {

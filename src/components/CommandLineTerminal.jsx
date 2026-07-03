@@ -21,7 +21,7 @@ export default function CommandLineTerminal() {
     }
   };
 
-  const handleCommand = (e) => {
+  const handleCommand = async (e) => {
     if (e.key !== 'Enter') return;
     const rawCmd = inputVal.trim();
     if (!rawCmd) return;
@@ -74,13 +74,22 @@ export default function CommandLineTerminal() {
         response = [{ text: 'Opening leetcode-solutions repository in a new window...', type: 'system' }];
         break;
       case 'visitor':
-        const count = localStorage.getItem('portfolio_visitors') || '24,842';
-        response = [
-          { text: 'Visitor Telemetry:', type: 'output-header' },
-          { text: `  Total Page Loads Registered : ${count}`, type: 'output' },
-          { text: '  Active Concurrent Readers   : 3 (Simulated session loops)', type: 'output' },
-          { text: '  Data Persistence Mode       : Active (localStorage)', type: 'output' }
-        ];
+        try {
+          const res = await fetch('https://api.counterapi.dev/v1/nashrahjaan53-portfolio/visits');
+          const data = await res.json();
+          const count = data.count || 0;
+          response = [
+            { text: 'Visitor Telemetry:', type: 'output-header' },
+            { text: `  Total Page Loads Registered : ${count}`, type: 'output' },
+            { text: '  Active Concurrent Readers   : 3 (Simulated session loops)', type: 'output' },
+            { text: '  Data Persistence Mode       : Active (CounterAPI.dev)', type: 'output' }
+          ];
+        } catch (err) {
+          response = [
+            { text: 'Visitor Telemetry:', type: 'output-header' },
+            { text: '  Error querying database from CounterAPI.dev.', type: 'error' }
+          ];
+        }
         break;
       case 'contact':
         response = [
