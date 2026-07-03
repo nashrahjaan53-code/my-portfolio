@@ -1149,3 +1149,19 @@
     transform: translate3d(-50%, 0, 0);
   }
 }
+
+/* LeetCode Section Styles */
+.leetcode-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .leetcode-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px !important;
+  }
+}

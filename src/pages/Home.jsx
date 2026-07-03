@@ -166,8 +166,71 @@ export default function Home() {
           </motion.div>
         </section>
 
+        {/* LEETCODE ALGORITHMIC SECTION */}
+        <section className="container" style={{ padding: '60px 24px', borderTop: '1px solid var(--border-subtle)' }}>
+          <div className="section-header">
+            <h2>Algorithmic Foundations</h2>
+            <p>Mastery of complex data structures and algorithmic complexity optimization.</p>
+          </div>
+
+          <motion.div
+            className="card-3d leetcode-grid"
+            style={{
+              background: 'rgba(255, 255, 255, 0.75)',
+              backdropFilter: 'blur(12px)',
+              border: '1px solid rgba(184, 144, 71, 0.18)',
+              padding: '40px',
+              borderRadius: '16px'
+            }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div>
+              <span className="kicker" style={{ color: 'var(--accent-gold-dark)', fontWeight: '700', textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1px' }}>Curated Solutions Repository</span>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '28px', fontWeight: '500', marginTop: '8px', marginBottom: '16px' }}>LeetCode Solutions Dashboard</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.7', marginBottom: '24px' }}>
+                Actively resolving data structures, database schemas, and mathematical optimization algorithms. This repository indexes resolved problems categorized by topic, showing a commitment to logical efficiency and clean scripting patterns.
+              </p>
+              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                <a href="https://github.com/nashrahjaan53-code/leetcode-solutions" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                  View LeetCode Repository
+                </a>
+              </div>
+            </div>
+
+            <div style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border-gold)', borderRadius: '12px', padding: '24px', fontFamily: 'var(--font-mono)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '12px', marginBottom: '16px' }}>
+                <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>PARAMETER</span>
+                <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>METRIC / VALUE</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', fontSize: '13px' }}>
+                <span>Repository URL</span>
+                <span style={{ color: 'var(--accent-gold-dark)', fontWeight: '600' }}>leetcode-solutions.git</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', fontSize: '13px' }}>
+                <span>Primary Languages</span>
+                <span style={{ color: 'var(--accent-gold-dark)', fontWeight: '600' }}>Python, SQL, C++</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', fontSize: '13px' }}>
+                <span>Solved Categories</span>
+                <span style={{ color: 'var(--accent-gold-dark)', fontWeight: '600' }}>Arrays, Hash Maps, SQL Queries, Trees</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', fontSize: '13px' }}>
+                <span>Target Complexity</span>
+                <span style={{ color: 'var(--accent-gold-dark)', fontWeight: '600' }}>O(N log N) / O(1) space</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', fontSize: '13px' }}>
+                <span>Audit Score</span>
+                <span style={{ color: 'var(--accent-gold-dark)', fontWeight: '600' }}>100% Passed Test Cases</span>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
         {/* HIGHLIGHTS SECTION */}
-        <section className="container" style={{ padding: '60px 24px' }}>
+        <section className="container" style={{ padding: '60px 24px', borderTop: '1px solid var(--border-subtle)' }}>
           <div className="section-header">
             <h2>Core Competencies</h2>
             <p>Key methodologies I apply to solve data problems.</p>
