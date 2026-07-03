@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function Navbar({ theme, toggleTheme }) {
+export default function Navbar({ theme, toggleTheme, visitorCount }) {
   return (
     <nav className="navbar">
       <div className="navbar-inner">
@@ -19,6 +19,11 @@ export default function Navbar({ theme, toggleTheme }) {
             Profile
           </NavLink>
           
+          <div className="navbar-visitor-badge" title="Persistent portfolio views // Active connection status verified">
+            <span className="visitor-dot-pulse" />
+            <span>SYS_LOAD: {visitorCount?.toLocaleString()}</span>
+          </div>
+
           <button 
             onClick={toggleTheme} 
             className="theme-toggle-btn"

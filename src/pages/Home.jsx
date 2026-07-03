@@ -9,15 +9,6 @@ import CommandLineTerminal from '../components/CommandLineTerminal';
 export default function Home() {
   const primaryPhoto = 'profile.jpg';
   const [photoSrc, setPhotoSrc] = useState(primaryPhoto);
-  const [visitorCount, setVisitorCount] = useState(24842);
-
-  useEffect(() => {
-    const currentCount = parseInt(localStorage.getItem('portfolio_visitors') || '24842', 10);
-    const newCount = currentCount + Math.floor(Math.random() * 3) + 1;
-    localStorage.setItem('portfolio_visitors', newCount.toString());
-    setVisitorCount(newCount);
-  }, []);
-
   const handlePhotoError = () => {
     setPhotoSrc(null);
   };
@@ -74,13 +65,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginBottom: '16px' }}>
-                <span className="kicker" style={{ marginBottom: 0 }}>Srinagar, Jammu & Kashmir, India</span>
-                <div className="visitor-counter-badge">
-                  <span className="visitor-counter-dot" />
-                  <span>VISITOR #{visitorCount.toLocaleString()} // ACTIVE NOW</span>
-                </div>
-              </div>
+              <span className="kicker">Srinagar, Jammu & Kashmir, India</span>
               
               <h1 className="hero-title">
                 Nashrah Khan<br />

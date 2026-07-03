@@ -14,6 +14,7 @@ export default function App() {
   });
 
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
+  const [visitorCount, setVisitorCount] = useState(24842);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -26,6 +27,13 @@ export default function App() {
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const currentCount = parseInt(localStorage.getItem('portfolio_visitors') || '24842', 10);
+    const newCount = currentCount + Math.floor(Math.random() * 3) + 1;
+    localStorage.setItem('portfolio_visitors', newCount.toString());
+    setVisitorCount(newCount);
   }, []);
 
   const toggleTheme = () => {
@@ -47,7 +55,7 @@ export default function App() {
           aria-hidden="true"
         />
 
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
+        <Navbar theme={theme} toggleTheme={toggleTheme} visitorCount={visitorCount} />
         
         <div style={{ flexGrow: 1, zIndex: 1, position: 'relative' }}>
           <Routes>
