@@ -97,7 +97,7 @@ export default function Home() {
 
               <div className="hero-stats">
                 <div className="hero-stat-item">
-                  <span className="hero-stat-value">24</span>
+                  <span className="hero-stat-value">35</span>
                   <span className="hero-stat-label">End-to-End Projects</span>
                 </div>
                 <div className="hero-stat-item">
