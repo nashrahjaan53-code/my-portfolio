@@ -1,21 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default function Navbar({ theme, toggleTheme, visitorCount }) {
+  const [menuActive, setMenuActive] = useState(false);
+
+  const closeMenu = () => setMenuActive(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-inner">
-        <NavLink to="/" className="brand">
+        <NavLink to="/" className="brand" onClick={closeMenu}>
           Nashrah Khan<span className="brand-dot" />
         </NavLink>
-        <div className="nav-links">
-          <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+
+        <button 
+          className="menu-toggle" 
+          onClick={() => setMenuActive(!menuActive)}
+          aria-label="Toggle menu"
+        >
+          {menuActive ? (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          ) : (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          )}
+        </button>
+
+        <div className={`nav-links ${menuActive ? 'mobile-active' : ''}`}>
+          <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>
             Dashboard
           </NavLink>
-          <NavLink to="/projects" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+          <NavLink to="/projects" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>
             Showroom
           </NavLink>
-          <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+          <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>
             Profile
           </NavLink>
           
@@ -25,7 +42,7 @@ export default function Navbar({ theme, toggleTheme, visitorCount }) {
           </div>
 
           <button 
-            onClick={toggleTheme} 
+            onClick={() => { toggleTheme(); closeMenu(); }} 
             className="theme-toggle-btn"
             aria-label="Toggle dark/light theme"
             style={{ marginRight: '8px' }}
@@ -42,6 +59,7 @@ export default function Navbar({ theme, toggleTheme, visitorCount }) {
             target="_blank"
             rel="noopener noreferrer"
             className="nav-cta"
+            onClick={closeMenu}
           >
             GitHub
           </a>
